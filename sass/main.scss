@@ -1,0 +1,162 @@
+
+// ------ IMPORT BOOTSTRAP SCSS ---- //
+@import "../node_modules/bootstrap/dist/css/_bootstrap.scss";
+@import "../node_modules/bootstrap/dist/css/_bootstrap-theme.scss";
+
+//body styles - not relevant
+.main-container{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+//custom directive styles
+ab-photo-select{
+
+    //directive wrapper styles
+    .photo-select-wrapper{
+        width: 360px;
+        position: relative;
+
+
+        //directive search input and button to open photo select styles
+        .photo-select-utilities{
+            margin-top:20px;
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+
+            //for ng-class when input isnt visible.
+            &.align-right{
+                justify-content: flex-end;
+            }
+
+            //search input styles
+            input{
+                //only bottom border, some extra padding
+                border:none;
+                border-bottom: 1px solid #ccc;
+                box-shadow: none;
+                outline:none;
+                padding:10px 20px;
+            }
+
+            button{
+                //toggle button extra padding for size
+                padding-left:30px;
+                padding-right:30px;
+
+            }
+        }
+
+
+        //currently selected img wrapper
+        .selected-img-wrapper{
+            //flexed centered
+            display:flex;
+            align-items: center;
+            justify-content: center;
+
+            //height & padding
+            height: 200px;
+            padding:20px;
+
+            //border
+            border: 1px solid #ddd;
+            border-radius:4px;
+
+            //responsive img
+            img{
+                max-height: 100%;
+            }
+
+        }
+
+
+        //all photos wrapper that will be toggled on and off
+        .all-photos-wrapper{
+            //size and positioning
+            max-height: 400px;
+            position:absolute;
+            top:300px;
+            left:0px;
+            width:360px;
+            z-index: 10;
+            overflow: auto;
+            padding:20px;
+
+            //no ul li markers
+            list-style-type: none;
+
+            //border
+            border:1px solid #ddd;
+            border-radius: 4px;
+
+            //every photo in photo list
+            li{
+                //sizing and display flex so content can be centered easily
+                height:150px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                padding:10px;
+                cursor:pointer;
+
+                //border bottom for every li except last
+                &:not(:last-child){
+                    border-bottom: 1px solid #ddd;
+                }
+
+                //first less padding top:
+                &:first-child{
+                    padding-top:0px;
+                }
+
+                //hover effect
+                &:hover{
+                    background: #ddd;
+                }
+
+                //photo container (title and img)
+                .photo-container{
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    //title styles
+                    .title{
+
+                        //font styles
+                        font-size: 1.1em;
+                        font-weight: bold;
+                        text-align: center;
+
+                        //sizing
+                        width:100px;
+                        flex-wrap: wrap;
+                        padding:10px 10px 10px 0px;
+                    }
+
+                    //img wrapper styles
+                    .img-wrapper{
+                        flex:1;
+                        //centered
+                        display:flex;
+                        justify-content: center;
+                        align-items: center;
+                        img{
+                            //photo sizing
+                            max-width: 100%;
+                            border-radius:2px;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+}

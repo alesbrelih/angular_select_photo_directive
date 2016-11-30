@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Photo Select Angular Custom Directive</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="css/main.css" rel="stylesheet">
+    </head>
+    <body ng-app="photoSelectApp">
+        <div class="row main-container" ng-controller="SelectDirectiveCtrl as vm">
+
+
+
+            <ab-photo-select ng-model="vm.selectedPhotoId" photos="vm.photos" selected="vm.selectedUrl"></ab-photo-select>
+        </div>
+
+        <script src="./scripts/app.b.js"></script>
+    </body>
+</html>
