@@ -11,7 +11,9 @@
 
 
 
-            <ab-photo-select ng-model="vm.selectedPhotoId" photos="vm.photos" selected="vm.selectedUrl"></ab-photo-select>
+            <ab-photo-select ng-model="vm.selectedPhotoId" photos="vm.photos"></ab-photo-select>
+
+            <button type="button" ng-click="vm.test()">Test</button>
         </div>
 
         <script src="./scripts/app.b.js"></script>
