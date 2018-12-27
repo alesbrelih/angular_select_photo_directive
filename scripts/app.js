@@ -57,7 +57,7 @@
             //selects photo and sets ngModel
             scope.selectPhoto = (photo)=>{
                 scope.selected = photo;
-                ngCtrl.$setViewValue(photo.Id);
+                ngCtrl.$setViewValue(photo.PhotoId);
             }
 
         }
